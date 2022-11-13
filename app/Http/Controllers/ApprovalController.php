@@ -148,8 +148,7 @@ class ApprovalController extends Controller
             'nama_pegawai'=>$perdins->nama_pegawai
         );
         
-        //return json_encode($arrPerdins);
-        return new DetailPerdinResource($arrPerdins);
+        return json_encode($arrPerdins);
     }
 
     /**
