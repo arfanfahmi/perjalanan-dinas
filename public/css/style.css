@@ -1,0 +1,347 @@
+@font-face {
+    font-family: "Ubuntu";
+    src: url(Ubuntu-Regular.ttf);
+}
+
+* {
+    font-family:'ubuntu';
+    font-weight:400;
+    font-size:0.93rem;
+}
+
+a{
+    text-decoration:none;
+    color:#5A5A5A;
+}
+
+a:hover{
+    text-decoration:none;
+    color:rgb(6 148 241);
+}
+
+body {
+    color:#5A5A5A;
+}
+
+table {
+    border-collapse: separate !important;
+    border-spacing:0 10px !important;
+    font-size:90%;
+}
+
+table tr {
+    padding: 0 1rem;
+    background-color:#fff;
+}
+
+table thead:hover {
+    border:1px solid rgb(226 21 21);
+}
+
+.rounded-col{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px; 
+    border-top-right-radius: 75px;
+    border-bottom-right-radius: 75px;
+    box-shadow: 5px 0px 5px -2px #bfbfbf;
+}
+
+tr td:first-child { 
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; 
+}
+tr td:last-child { 
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; 
+}
+
+tr th:first-child { 
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; 
+}
+tr th:last-child { 
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; 
+}
+
+.card {
+    border:0px;
+}
+
+.card-transparent {
+    background-color:transparent;
+}
+
+.btn:hover{
+    color:#fff !important;
+}
+
+.header-row{
+    margin-left:0px;
+    margin-right:0px;
+    background-color:#e9ecef;
+    border-top-left-radius: 8x;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius:8px;
+    border-bottom-right-radius: 8px; 
+    /*border:1px solid #dedede;*/
+}
+.btn-outline-tv{
+    color: rgb(6 148 241);
+    background-color: transparent;
+    background-image: none;
+    border-color: rgb(6 148 241);
+}    
+.btn-outline-tv:hover{
+    color: #fff;
+    background-color: rgb(6 148 241);
+    background-image: none;
+}  
+
+.btn-outline-orange{
+    color: rgb(255, 93, 30);
+    background-color: transparent;
+    background-image: none;
+    border-color: rgb(255, 93, 30);
+}    
+.btn-outline-orange:hover{
+    color: #fff;
+    background-color: rgb(255, 93, 30);
+    background-image: none;
+}  
+
+.btn-round {
+    border-radius:1rem;
+}
+
+.bg-hijau {
+    color: #fff;
+    background-color: rgb(57, 153, 6);
+    background-image: none;
+}
+
+
+
+
+.bg-tv {
+    color: #fff;
+    background-color: rgb(6 148 241);
+    background-image: none;
+}
+
+.bg-orange {
+    color: #fff;
+    background-color: rgb(255, 93, 30);
+    background-image: none;
+}
+.bg-abu {
+    color: rgb(104 113 117);
+    background-color: rgb(242 243 242);
+    background-image: none;
+}
+
+.bg-red{
+    background-color:rgb(226 21 21);
+    color:#fff;
+}
+
+
+.bg-outline-tv {
+    color: rgb(6 148 241);
+    background-color: transparent;
+    border-color: rgb(6 148 241);
+    background-image: none;
+    border:1px solid rgb(6 148 241);
+}
+
+.bg-outline-orange {
+    color: rgb(255, 93, 30);
+    background-color: transparent;
+    border-color: rgb(255, 93, 30);
+    background-image: none;
+    border:1px solid rgb(255, 93, 30);
+}
+
+.bg-outline-green {
+    color: rgb(4, 129, 54);
+    background-color: transparent;
+    border-color: rgb(4, 129, 54);
+    background-image: none;
+    border:1px solid rgb(4, 129, 54);
+}
+
+.bg-outline-red {
+    color: rgb(226 21 21);
+    background-color: transparent;
+    border-color: rgb(226 21 21);
+    background-image: none;
+    border:1px solid rgb(226 21 21);
+}
+
+
+.form-control {
+    border-radius:0.17rem;
+}
+
+.inlineblock {
+    display:inline-block;
+}
+
+.checkbox label, .radio label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 7px;
+    line-height: 27px;
+}
+
+input[type='radio']:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: rgb(6 148 241);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+.badge-lg {
+    font-size:90%;
+    padding:0.25rem 0.3rem;
+    border-radius:0.2rem;
+}
+
+/*pagination*/
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: rgb(6 148 241);
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: rgb(6 148 241);
+    border-color: rgb(6 148 241);
+}
+
+.card-transparent{
+    background-color:transparent;
+}
+
+.align-center{
+    text-align:center !important;
+}
+
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+.card-login input{
+    background-color:#d4ecff;
+    border:0;
+    font-size:13px;
+    border-radius:5px;
+}
+
+.card-login .btn-login{
+    background-color:#4f65aa;
+    border:0;
+    color:#fff;
+    padding:5px 0px;
+    border-radius:15px;
+}
+
+.alert-dismissible-lg .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
+    color: inherit;
+}
+
+.font-12 {
+    font-size:12px !important;
+}
+
+.select-on-modal{
+    position:block !important;
+    width:100%
+}
+
+.color-blue{
+    font-weight: bolder !important;
+    color:rgb(6 148 241);
+}
+
+.color-orange{
+    font-weight: bolder !important;
+    color:rgb(255, 93, 30);
+}
+
+.border-abu {
+    border:1px solid #5A5A5A !important;
+}
+
+
+.error-message {
+    display:block;
+    color:rgb(137, 12, 35);
+    font-size:12px;
+    text-align:left;
+}
+
+.table-info-perdin {
+
+    border-spacing:0px !important;
+}
+
+.table-info-perdin th {
+    background-color:rgb(203 205 206);
+    color:#fff;
+    text-align:center;
+    padding:5px;
+    border-radius:0px !important;
+}
+
+.table-info-perdin td {
+    background-color:rgb(236 239 240);
+    text-align:center;
+    padding:10px 10px 0px 10px;
+    border-radius:0px !important;
+    color:rgb(6 148 241);
+}
+
+.table-info-perdin h5{
+    font-size:1.2rem;
+    margin-bottom:0px;
+}
+
+.table-info-perdin p{
+    margin-bottom:10px
+}
