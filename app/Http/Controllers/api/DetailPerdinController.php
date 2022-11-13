@@ -57,7 +57,6 @@ class DetailPerdinController extends Controller
             'nama_pegawai'=>$perdins->nama_pegawai
         );
         
-        //return json_encode($arrPerdins);
         return new DetailPerdinResource(true, "List Detail Tarif", $arrPerdins);
     }
 
