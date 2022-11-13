@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\api\DetailPerdinController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('/get-tarif/{id}', App\Http\Controllers\Api\DetailPerdinController::class,'getTarif');
+Route::apiResource('/get-tarif', App\Http\Controllers\Api\DetailPerdinController::class);

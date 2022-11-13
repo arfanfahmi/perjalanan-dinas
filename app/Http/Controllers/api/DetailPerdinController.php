@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers\api;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\User;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use app\Http\Resources\DetailPerdinResource;
+use App\Http\Resources\DetailPerdinResource;
+
 
 class DetailPerdinController extends Controller
 {
     
-    public function getTarif($id)
+    public function show($id)
     {
+        
         $perdins = DB::select('
             SELECT perdins.id as id_perdin, perdins.username, perdins.tgl_berangkat,perdins.tgl_kembali,perdins.keterangan,
                     a.id as id_kota_asal, a.nama_kota as kota_asal,a.latitude as lat_asal, a.longitude as lon_asal,
@@ -56,7 +58,7 @@ class DetailPerdinController extends Controller
         );
         
         //return json_encode($arrPerdins);
-        return new DetailPerdinResource($arrPerdins);
+        return new DetailPerdinResource(true, "List Detail Tarif", $arrPerdins);
     }
 
     private function getDistanceBetweenPoints($lat1, $lon1, $lat2, $lon2) {

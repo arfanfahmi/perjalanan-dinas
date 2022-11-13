@@ -6,9 +6,13 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class DetailPerdinResource extends JsonResource
 {
-    function __construct($resource)
+    public $message;
+    public $status;
+    function __construct($status, $message, $resource)
     {
         parent::__construct($resource);
+        $this->message = $message;
+        $this->status = $status;
     }
     
     /**
@@ -19,8 +23,11 @@ class DetailPerdinResource extends JsonResource
      */
     public function toArray($request)
     {
-        return $this->resource;
-        //return parent::toArray($request);
+        return [
+            'success'   => $this->status,
+            'message'   => $this->message,
+            'detail_tarif'      => $this->resource
+        ];
         
     }
 }
