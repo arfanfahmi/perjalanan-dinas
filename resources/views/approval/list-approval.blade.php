@@ -190,12 +190,11 @@
     $(".button-detail").on("click", function(e){
         $id = this.id;
         
-        $link = `{{ url("/approval/show/") }}`;
         $.ajax({
             type:"get",
-            url:`{{ url("/approval/show/") }}`+"/"+$id,
-            success: function(data) {
-                data = JSON.parse(data);
+            url:`{{ url("/api/get-tarif/") }}`+"/"+$id,
+            success: function(response) {
+                let data = response.data.detail_tarif;
                 $(`select[name='id_kota_asal']`).val(data.id_kota_asal).change();
                 $(`select[name='id_kota_tujuan']`).val(data.id_kota_tujuan).change();
                 $(`input[name='tgl_berangkat']`).val(data.tgl_berangkat);
