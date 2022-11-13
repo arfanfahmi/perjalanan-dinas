@@ -73,8 +73,20 @@
   </div>   
 </div>
 <script>
-    $(document).ready(function() {
-        $('.js-example-basic-single').select2();
+    $(`input[type=radio][name="ln"]`).change(function() {
+        if (this.value == 'Y') {
+           $("#provinsi").val('1000').change();
+           $("#provinsi").attr("disabled","disabled");
+           $("#pulau").val('1000').change();
+           $("#pulau").attr("disabled","disabled");
+        }
+        else if (this.value == 'N') {
+           $("#provinsi").prop("selectedIndex", 0).change();
+           $("#provinsi").removeAttr("disabled");
+
+           $("#pulau").prop("selectedIndex", 0).change();
+           $("#pulau").removeAttr("disabled");
+        }
     });
     </script>
     
