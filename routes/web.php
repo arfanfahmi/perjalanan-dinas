@@ -57,4 +57,3 @@ Route::get('/perdin/cek-perdin-by/{id}/{id1}/{id2}', [PerdinController::class,'c
 Route::get('/approval', [ApprovalController::class,'index'])->middleware('auth');
 Route::get('/approval/history', [ApprovalController::class,'history'])->middleware('auth');
 Route::post('/approval/update/{id}', [ApprovalController::class,'update'])->middleware('auth');
-Route::get('/approval/show/{id}', [ApprovalController::class,'show'])->middleware('auth');
