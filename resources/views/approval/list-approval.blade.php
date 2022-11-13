@@ -1,17 +1,15 @@
 @extends('main')
 @section('content')
 
-
-
     <div class='row header-row mb-3' >
-        <div class='col-md-9  py-4 rounded-col' style="background-color:white;color:#3c3b3b">
-            <h3 class=""><i class="bi bi-list-check mr-2" style="font-size:1.5rem"></i> Pengajuan Perdin Baru</h3>
+        <div class='col-md-9  py-4 rounded-col bg-white'>
+            <h3><i class="bi bi-list-check mr-2"></i> Pengajuan Perdin Baru</h3>
         </div>
         <div class='col-md-3 py-4'>
             <a href="/approval/history">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambahData"            
-            style='float:right;background-color:rgb(6 148 241);color:#fff;border:0px'>
-            <i class="bi bi-book mr-2" style="color:#fff"></i>
+            <button class="btn btn-primary text-right bg-tv border-0" data-toggle="modal" data-target="#modalTambahData"            
+            style='background-color:rgb(6 148 241)'>
+            <i class="bi bi-book mr-2"></i>
                 Histori Pengajuan     
             </button>
             </a>
@@ -30,11 +28,11 @@
     <table class="table table-borderless">
     <thead>
         <tr>
-        <th scope="col" width='2%'>#</th>
-        <th scope="col" width='18%'>Nama Pegawai</th>
-        <th scope="col" width='40%'>Tujuan dan Waktu</th>
-        <th scope="col" width='30%'>Keterangan</th>
-        <th scope="col" style='text-align:center'>Aksi</th>
+        <th scope="col" width="2%">#</th>
+        <th scope="col" width="18%">Nama Pegawai</th>
+        <th scope="col" width="40%">Tujuan dan Waktu</th>
+        <th scope="col" width="30%">Keterangan</th>
+        <th scope="col" class="text-center">Aksi</th>
         </tr>
     </thead>
     @if(!empty($perdins))
@@ -59,7 +57,7 @@
                     <div class='mt-3'>
                     <span class="">{{ date_format($origin,"d M") }}</span> - 
                     <span class="">{{ date_format($target,"d M Y") }}</span>
-                    <span class="ml-2 color-blue"><i class="bi bi-clock color-blue mr-1" style='font-size:90%'></i>{{ $interval->days+1}} hari</span>
+                    <span class="ml-2 color-blue"><i class="bi bi-clock color-blue mr-1 font-90"></i>{{ $interval->days+1}} hari</span>
                 </div>
 
                 </td>
@@ -77,7 +75,7 @@
     @else
         <tbody>
             <tr>    
-                <td colspan="5" align="center" class="py-3"><h5><i class="bi bi-check2-square mr-2" style="font-size:20px"></i>Belum ada pengajuan baru</h5></td>
+                <td colspan="5" align="center" class="py-3"><h2><i class="bi bi-check2-square mr-2"></i>Belum ada pengajuan baru</h2></td>
             </tr>
         </tbody>
     @endif
@@ -94,19 +92,15 @@
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header" style="border-bottom:0px">
+        <div class="modal-header">
           <h4 id='nama-pegawai'></h4>
-          
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          
         </div>
         <div class="modal-body">
-           
-             
               <div class="row">
                   <div class="col-md-6">
                       <label for="id_kota_asal" class="form-label" >Kota</label>
-                      <select class="form-control js-example-basic-single select-on-modal" 
+                      <select class="form-control js-example-basic-single select-on-modal select-kota" 
                           name="id_kota_asal" style="position:block !important; width:100%" required disabled>
                           <option value="">Kota Asal </option>
                           @foreach($kotas as $kota)
@@ -117,7 +111,7 @@
   
                   <div class="col-md-6">
                       <label class="form-label" for="id_kota_tujuan">&nbsp</label>
-                      <select class="form-control js-example-basic-single select-on-modal" 
+                      <select class="form-control js-example-basic-single select-on-modal select-kota" 
                           name="id_kota_tujuan"  style="position:block !important; width:100%" required disabled>
                           <option value="">Kota Tujuan </option>
                           @foreach($kotas as $kota)
@@ -145,7 +139,7 @@
               <div id="message" class="error-message my-2"></div> 
               <div class="mb-3 mt-3">
                   <label for="keterangan" class="form-label">Keterangan</label>
-                  <textarea rows='4' maxlength="160" class="form-control" name="keterangan" aria-describedby="" required style='resize:none' disabled></textarea>
+                  <textarea rows='4' maxlength="160" class="form-control" name="keterangan" aria-describedby="" required disabled></textarea>
               </div>
   
                 <table class='table table-borderless table-info-perdin'>
@@ -158,27 +152,25 @@
                         <td><h5 id="jumlah-hari"></h5></td>
                         <td>
                             <h5 id="jarak"></h5>
-                            <p class='mb-0' style="color:#3e3e3e" id="ongkos-per-hari">Rp 350.000/hari</p>
-                            <p style='font-size:75%;color:#3e3e3e' id = "kategori-perdin">Jarak > 60 km</p>
+                            <p class="mb-0 p-info-tarif" id="ongkos-per-hari">Rp 350.000/hari</p>
+                            <p class="p-info-tarif font-75" id = "kategori-perdin">Jarak > 60 km</p>
                         </td>
                         <td><h5 id="ongkos-total"></h5></td>
                     </tbody>
                 </table>
-                <div style="text-align:center">
-            
-              <form class="form-approval" method="POST" style='display:inline'>
-                @csrf
-                <input name="status" value="ditolak" type="hidden" class="id">
-                <button type="submit" style="text-align:center" class="btn bg-red mr-3">Reject</button>  
-              </form>
+                <div class="text-center">
+                    <form class="form-approval" method="POST">
+                        @csrf
+                        <input name="status" value="ditolak" type="hidden" class="id">
+                        <button type="submit" class="btn bg-red mr-3 text-center">Reject</button>  
+                    </form>
 
-              <form action="" class="form-approval" method="POST" style='display:inline'>
-                @csrf
-                 <input name="status" value="disetujui" type="hidden" class="id">
-                 <button type="submit" class="btn bg-tv">Approve</button>
-              </form>   
-             </div>
-          
+                    <form action="" class="form-approval" method="POST">
+                        @csrf
+                        <input name="status" value="disetujui" type="hidden" class="id">
+                        <button type="submit" class="btn bg-tv">Approve</button>
+                    </form>   
+                </div>
         </div>
       </div>
   

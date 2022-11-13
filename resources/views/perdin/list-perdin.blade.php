@@ -1,14 +1,14 @@
 @extends('main')
 @section('content')
     <div class='row header-row mb-3' >
-        <div class='col-md-9  py-4 rounded-col' style="background-color:white;color:#3c3b3b">
+        <div class='col-md-9  py-4 rounded-col bg-white'>
             <h3 class="">Perjalanan Dinas Anda</h3>
         </div>
         <div class='col-md-3 py-4'>
             
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambah"            
-            style='float:right;background-color:rgb(6 148 241);color:#fff;border:0px'>
-            <i class="bi bi-calendar-plus mr-2" style="color:#fff"></i>
+            <button type="button" class="btn btn-primary bg-tv border-0" data-toggle="modal" data-target="#modalTambah"            
+            style='float:right;background-color:rgb(6 148 241);'>
+            <i class="bi bi-calendar-plus mr-2"></i>
                 Ajukan Perdin   
             </button>
             
@@ -21,7 +21,7 @@
         
         <th scope="col">Kota</th>
         <th scope="col" width='40%'>Keterangan</th>
-        <th scope="col" style='text-align:center'>Status</th>
+        <th scope="col" class="text-center">Status</th>
         </tr>
     </thead>
     <tbody>
@@ -42,7 +42,7 @@
                 <div class='mt-3'>
                     <span class="">{{ date_format($origin,"d M") }}</span> - 
                     <span class="">{{ date_format($target,"d M Y") }}</span>
-                    <span class="ml-2 color-blue"><i class="bi bi-clock color-blue mr-1" style='font-size:90%'></i>{{ $interval->days+1}} hari</span>
+                    <span class="ml-2 color-blue"><i class="bi bi-clock color-blue mr-1 font-90"></i>{{ $interval->days+1}} hari</span>
                 </div>
 
             </td>
@@ -73,7 +73,7 @@
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header" style="border-bottom:0px">
+      <div class="modal-header">
         <h4>Detail Perjalanan Dinas</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
@@ -124,14 +124,14 @@
             <div id="message" class="error-message my-2"></div> 
             <div class="mb-3 mt-3">
                 <label for="keterangan" class="form-label">Keterangan (max. 160 karakter)</label>
-                <textarea rows='4' maxlength="160" class="form-control" name="keterangan" aria-describedby="" required style='resize:none'></textarea>
+                <textarea rows='4' maxlength="160" class="form-control" name="keterangan" aria-describedby="" required></textarea>
             </div>
 
-            <div class="bg-abu" style='position:block;width:50%;height:75px;margin:0 auto;text-align:center;border-radius:8px;padding:10px;'>
+            <div class="bg-abu" id="info-total-perdin">
                 <h5>Total Perjalanan Dinas</h5>
-                <h4 id='jumlah-hari' style="color:rgb(6 148 241)"></h4>
+                <h4 id='jumlah-hari' class="color-blue"></h4>
             </div>
-            <button type="submit" class="btn bg-orange  mt-3" style="width:100%">Simpan</button>
+            <button type="submit" class="btn bg-orange  mt-3 btn-block">Simpan</button>
         </form> 
       </div>
     </div>

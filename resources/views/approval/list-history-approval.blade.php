@@ -4,17 +4,14 @@
 
 
     <div class='row header-row mb-3' >
-        <div class='col-md-9  py-4 rounded-col' style="background-color:white;color:#3c3b3b">
-            <h3 class=""><i class="bi bi-book mr-2" style="font-size:1.5rem"></i>Histori Pengajuan Perdin</h3>
+        <div class='col-md-9  py-4 rounded-col bg-white'>
+            <h3><i class="bi bi-book mr-2"></i>Histori Pengajuan Perdin</h3>
             <div class="mb-0">
-                <a href="/approval" style="color: rgb(6 148 241); text-decoration:none">
-                    <i style="font-size:90%;" class="bi bi-arrow-return-left mr-1"></i>
-                    <span style="font-size:90%;">Kembali ke daftar pengajuan baru</span>
+                <a href="/approval" >
+                    <i class="bi bi-arrow-return-left mr-1 font-90"></i>
+                    <span  class="font-90">Kembali ke daftar pengajuan baru</span>
                 </a>
             </div>
-        </div>
-        <div class='col-md-3 py-4'>
-            
         </div>
     </div>    
 
@@ -24,9 +21,9 @@
         <tr>
         <th scope="col" width='2%'>#</th>
         <th scope="col">Pegawai</th>
-        <th scope="col" width='40%' style='text-align:center'>Tujuan dan Waktu</th>
-        <th scope="col" max-width='10%'  style='text-align:center'>Status</th>
-        <th scope="col" style='text-align:center'>Aksi</th>
+        <th scope="col" width='40%' class="text-center">Tujuan dan Waktu</th>
+        <th scope="col" max-width='10%' class="text-center">Status</th>
+        <th scope="col" class="text-center">Aksi</th>
         </tr>
     </thead>
     @if(!empty($perdins))
@@ -51,7 +48,7 @@
                     <div class='mt-3'>
                     <span class="">{{ date_format($origin,"d M") }}</span> - 
                     <span class="">{{ date_format($target,"d M Y") }}</span>
-                    <span class="ml-2"><i class="bi bi-clock mr-1" style='font-size:90%'></i>{{ $interval->days+1}} hari</span>
+                    <span class="ml-2"><i class="bi bi-clock mr-1 font-90"></i>{{ $interval->days+1}} hari</span>
                     </div>
 
                 </td>
@@ -72,7 +69,7 @@
     @else
         <tbody>
             <tr>    
-                <td colspan="5" align="center" class="py-3"><h5><i class="bi bi-check2-square mr-2" style="font-size:20px"></i>Belum ada pengajuan baru</h5></td>
+                <td colspan="5" align="center" class="py-3"><h3><i class="bi bi-check2-square mr-2"></i>Belum ada pengajuan baru</h3></td>
             </tr>
         </tbody>
     @endif
@@ -89,7 +86,7 @@
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header" style="border-bottom:0px">
+        <div class="modal-header">
           <h4 id='nama-pegawai'></h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
@@ -138,7 +135,7 @@
               <div id="message" class="error-message my-2"></div> 
               <div class="mb-3 mt-3">
                   <label for="keterangan" class="form-label">Keterangan</label>
-                  <textarea rows='4' maxlength="160" class="form-control" name="keterangan" aria-describedby="" required style='resize:none' disabled></textarea>
+                  <textarea rows='4' maxlength="160" class="form-control" name="keterangan" aria-describedby="" required disabled></textarea>
               </div>
   
                 <table class='table table-borderless table-info-perdin'>
@@ -151,14 +148,14 @@
                         <td><h5 id="jumlah-hari"></h5></td>
                         <td>
                             <h5 id="jarak"></h5>
-                            <p class='mb-0' style="color:#3e3e3e" id="ongkos-per-hari">Rp 350.000/hari</p>
-                            <p style='font-size:75%;color:#3e3e3e' id = "kategori-perdin">Jarak > 60 km</p>
+                            <p class="mb-0 p-info-tarif" id="ongkos-per-hari">Rp 350.000/hari</p>
+                            <p class="p-info-tarif font-75" id = "kategori-perdin">Jarak > 60 km</p>
                         </td>
                         <td><h5 id="ongkos-total"></h5></td>
                     </tbody>
                 </table>
-                <div style="text-align:center">
-                    <button style="text-align:center" class="btn bg-red mr-3" id='rejected'>Ditolak</button>  
+                <div class="text-center">
+                    <button class="btn bg-red mr-3 text-center" id='rejected'>Ditolak</button>  
                     <button type="submit" class="btn bg-hijau" id='approved'>Disetujui</button>
                 </div>
           

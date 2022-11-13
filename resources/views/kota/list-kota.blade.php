@@ -2,14 +2,14 @@
 @section('content')
 
     <div class='row header-row mb-3' >
-        <div class='col-md-9  py-4 rounded-col' style="background-color:white;color:#3c3b3b">
+        <div class='col-md-9  py-4 rounded-col bg-white'>
             <h3 class="">Data Master Kota</h3>
         </div>
         <div class='col-md-3 py-4'>
             <a href="kota/add">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambahData"            
-            style='float:right;background-color:rgb(6 148 241);color:#fff;border:0px'>
-            <i class="bi bi-journal-plus mr-2" style="color:#fff"></i>
+            <button type="button" class="btn btn-primary bg-tv border-0 text-center" data-toggle="modal" 
+                data-target="#modalTambahData" style="float:right;background-color:rgb(6 148 241)">
+            <i class="bi bi-journal-plus mr-2"></i>
             Tambah Kota                  
             </button>
             </a>

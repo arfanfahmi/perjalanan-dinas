@@ -2,12 +2,12 @@
 @section('content')
 
 <div class='row header-row mb-2' >
-    <div class='col-md-9  py-4 rounded-col' style="background-color:white;color:#3c3b3b">
+    <div class='col-md-9  py-4 rounded-col bg-white'>
         <h3 class="">Tambah Data User</h3>
         <div class="mb-0">
-            <a href="/user" style="color: rgb(6 148 241); text-decoration:none">
-                <i style="font-size:90%;" class="bi bi-arrow-return-left mr-1"></i>
-                <span style="font-size:90%;">Kembali ke daftar user</span>
+            <a href="/user">
+                <i class="font-90 bi bi-arrow-return-left mr-1"></i>
+                <span class="font-90">Kembali ke daftar user</span>
             </a>
         </div>
     </div>
@@ -58,17 +58,13 @@
                     @error('role')<div class="invalid-feedback">{{ $message }}</div>@enderror 
                 </div>
 
-                <button type="submit" class="btn bg-orange" style="width:100%">Simpan</button>
+                <button type="submit" class="btn bg-orange btn-block">Simpan</button>
             </form> 
         </div>    
     </div> 
   </div>   
 </div>
 <script>
-    $(document).ready(function() {
-        $('.js-example-basic-single').select2();
-    });
-
     $('input').change(function() {
         $(this).removeClass('is-invalid');
     });

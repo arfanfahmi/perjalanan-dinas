@@ -22,7 +22,7 @@
     
     <title>Perdin Aira Tech</title>
   </head>
-  <body style="background-color:#f2f3f4">
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top sticky-top" style="background-color:rgb(6 148 241)">
 
         <div class="container">
@@ -60,7 +60,7 @@
                   <form action={{ url("/login/logout/". Auth::user()->username) }} method="POST">
                     @csrf
                     <button type='submit' class ='btn bg-transparent nav-link'>
-                      <i class="bi bi-box-arrow-right mr-1 mt-1" style='color:rgba(255,255,255,.5);font-size:1rem'></i>
+                      <i class="bi bi-box-arrow-right mr-1 mt-1 bi-logout"></i>
                       Logout
                       <span class="sr-only">(current)</span>
                     </button>  
@@ -74,30 +74,23 @@
 
       <section id="main" class="my-5">
         <div class="container">
-
           <div class="row">
             <div class="col-md-3">
-              <div class="card pt-4 pb-3 px-2 mb-3" style="border:0px;border-top:5px solid rgb(6 148 241)">
-                <!--
-                <img src="/images/foto.jpg" class="rounded mx-auto" width="120" alt="Pas Foto">
-                -->
+              <div class="card pt-4 pb-3 px-2 mb-3 card-user">
                 <div class="card-body text-center">
-                  <p class="car-text mb-1" style='font-size:11px'> Do great job,</p>
+                  <p class="card-text mb-1 smaller-text"> Do great job,</p>
                   <h4 class="card-title text-center mb-4">{{ strtoupper(Auth::user()->nama_pegawai) }}</h4>
-                  <p class="car-text mb-1" style='font-size:11px'> Employee Registration Number:</p>
+                  <p class="card-text mb-1 smaller-text"> Employee Registration Number:</p>
                   <h5 class="card-text">{{ Auth::user()->nrp }}</h5>
-                  <!--
-                  <a href="#" class="btn bg-orange btn-sm mt-4" data-toggle="modal" data-target="#modal-password">Ganti Password</a>
-                  -->
                   <hr/>
-                  <p class="text-center mb-2 font-12" style='font-size:13px'>Your role is:</p>
+                  <p class="text-center mb-2 font-13">Your role is:</p>
                   <h5 class="color-blue text-center ">{{ Auth::user()->role=='pegawai'?'PEGAWAI':(Auth::user()->role=='sdm'?'DIVISI SDM':'ADMIN') }}</h5>
                 </div>
               </div>
             </div>
 
             <div class="col-md-9">
-              <div class="card px-3 card-transparent" style="border:0px">
+              <div class="card px-3 card-transparent">
                 @yield('content')
               </div>
             </div>
@@ -105,9 +98,10 @@
         </div>   
       </section>
 
+      <!--
       <div id="modal-password" class="modal fade" role="dialog">
           <div class="modal-dialog">
-            <!-- Modal content-->
+            
             <div class="modal-content">
               <div class="modal-header" style="border-bottom:0px">
                 <h4>Ubah Password</h4>
@@ -142,7 +136,7 @@
         
           </div>
         </div>
-        <!-- End Modal -->
+      -->
 
       <script src="/js/script.js"></script>
       </body>

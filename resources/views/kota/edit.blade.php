@@ -2,12 +2,12 @@
 @section('content')
 
 <div class='row header-row mb-2' >
-    <div class='col-md-9  py-4 rounded-col' style="background-color:white;color:#3c3b3b">
+    <div class='col-md-9  py-4 rounded-col bg-white'>
         <h3 class="">Update Data {{ $kota->nama_kota }}</h3>
         <div class="mb-0">
-            <a href="/kota" style="color: rgb(6 148 241); text-decoration:none">
-                <i style="font-size:90%;" class="bi bi-arrow-return-left mr-1"></i>
-                <span style="font-size:90%;">Kembali ke daftar kota</span>
+            <a href="/kota">
+                <i class="bi bi-arrow-return-left mr-1 font-90"></i>
+                <span class="font-90">Kembali ke daftar kota</span>
             </a>
         </div>
     </div>
@@ -66,7 +66,7 @@
                     <input type="text" class="form-control" id="longitude" name="longitude" aria-describedby="" value ="{{ $kota->longitude }}" required>
                 </div>
                  
-                <button type="submit" class="btn bg-orange" style="width:100%">Simpan</button>
+                <button type="submit" class="btn bg-orange btn-block">Simpan</button>
             </form> 
         </div>    
     </div> 
