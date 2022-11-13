@@ -49,10 +49,10 @@
                 <div class="mb-3">
                     <label class="form-label" for="role">Pilih Role dalam Aplikasi</label>
                     <select class="form-control js-example-basic-single high-select @error('role') is-invalid @enderror" 
-                        name="role" required {{Auth::user()->username==$user->username?'disabled="disabled"':''  }}>
+                        name="role" required>
                         <option value="">Pilih role ... </option>
                         @foreach($roles as $i=>$role)
-                        <option value="{{ $roles[$i] }}" {{ $roles[$i]==$user->role?'selected':'' }}>{{ strtoupper($roles[$i]) }}</option>
+                        <option value="{{ $roles[$i] }}" {{ $roles[$i]==$user->role?'selected':'' }}  {{Auth::user()->username==$user->username && $roles[$i] != 'admin'?'disabled':''  }}>{{ strtoupper($roles[$i]) }}</option>
                         @endforeach
                     </select>
                     @error('role')<div class="invalid-feedback">{{ $message }}</div>@enderror 

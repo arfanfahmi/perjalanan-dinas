@@ -23,8 +23,8 @@
         <th scope="col">Nama Kota</th>
         <th scope="col">Provinsi</th>
         <th scope="col">Luar Negeri</th>
-        <th scope="col">Koordinat</th>
-        <th scope="col">Aksi</th>
+        <th scope="col" width="30%">Koordinat</th>
+        <th scope="col" width="15%" class="text-center">Aksi</th>
         </tr>
     </thead>
     <tbody>
